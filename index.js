@@ -1,11 +1,12 @@
 var path = require('path')
+var mergeObjects = require('lodash/object/merge')
 
 var WebpackRailsI18nJSPlugin = function(options) {
   this.defaultOptions = {
     moduleName: 'i18n-js',
     localesPath: __dirname
   }
-  this.options = Object.assign({}, this.defaultOptions, options || {})
+  this.options = mergeObjects(this.defaultOptions, options || {})
 }
 
 WebpackRailsI18nJSPlugin.prototype.apply = function(compiler) {
