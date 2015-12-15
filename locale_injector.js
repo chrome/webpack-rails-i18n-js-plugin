@@ -1,25 +1,23 @@
-'use strict'
-
-const querystring = require('querystring')
-const path = require('path')
-const yaml = require('js-yaml')
-const fs = require('fs')
-const glob = require('glob')
-const mergeObjects = require('lodash/object/merge')
+var querystring = require('querystring')
+var path = require('path')
+var yaml = require('js-yaml')
+var fs = require('fs')
+var glob = require('glob')
+var mergeObjects = require('lodash/object/merge')
 
 function readLocales(localesPath) {
-  const files = glob.sync('**/*.yml', {cwd: localesPath})
-  return files.reduce((locales, localeFile) => {
-    const locale = yaml.safeLoad(fs.readFileSync(path.join(localesPath, localeFile), 'utf8'))
+  var files = glob.sync('**/*.yml', {cwd: localesPath})
+  return files.reduce(function(locales, localeFile) {
+    var locale = yaml.safeLoad(fs.readFileSync(path.join(localesPath, localeFile), 'utf8'))
     return mergeObjects(locales, locale)
   }, {})
 }
 
 module.exports = function(src) {
-  const lastLine = 'return I18n;'
-  const options = querystring.parse(this.query.substr(1))
-  const locales = readLocales(options.localesPath)
-  const localeString = 'I18n.translations = ' + JSON.stringify(locales) + ';'
+  var lastLine = 'return I18n;'
+  var options = querystring.parse(this.query.substr(1))
+  var locales = readLocales(options.localesPath)
+  var localeString = 'I18n.translations = ' + JSON.stringify(locales) + ';'
   return src
     .replace(lastLine, localeString + "\n" + lastLine)
     .replace('locale: "en"', "locale: document.querySelector('html').lang")
