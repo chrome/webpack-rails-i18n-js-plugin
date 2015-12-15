@@ -1,0 +1,12 @@
+{
+  "name": "webpack-rails-i18n-js-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^6.0.1",
+    "lodash": "^3.10.1"
+  }
+}
