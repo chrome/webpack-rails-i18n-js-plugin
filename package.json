@@ -1,12 +1,19 @@
 {
   "name": "webpack-rails-i18n-js-plugin",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/plugin/index.js",
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chrome/webpack-rails-i18n-js-plugin.git"
+  },
+  "homepage": "https://github.com/chrome/webpack-rails-i18n-js-plugin",
   "license": "MIT",
   "dependencies": {
     "glob": "^6.0.1",
-    "lodash": "^3.10.1"
+    "js-yaml": "^3.4.6",
+    "lodash": "^3.10.1",
+    "i18n-js": "https://github.com/fnando/i18n-js"
   }
 }
