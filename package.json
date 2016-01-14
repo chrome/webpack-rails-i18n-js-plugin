@@ -1,6 +1,6 @@
 {
   "name": "webpack-rails-i18n-js-plugin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "lib/plugin/index.js",
   "author": "",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "glob": "^6.0.1",
+    "i18n-js": "https://github.com/fnando/i18n-js",
     "js-yaml": "^3.4.6",
-    "lodash": "^3.10.1",
-    "i18n-js": "https://github.com/fnando/i18n-js"
+    "lodash": "^3.10.1"
   }
 }
